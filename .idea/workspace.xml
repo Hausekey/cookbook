@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d61f212-0ee6-49f4-9942-967bb699ff16" name="Default Changelist" comment="- initializing parse project">
-      <change afterPath="$PROJECT_DIR$/vocab.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse_pdf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipes/年貨趕進度 海味乾貨化身飯店美味 挑買料理懶人包 (1).doc" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,10 +15,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parse_pdf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
+            <state relative-caret-position="109">
               <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -30,37 +27,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/tensorflow/python/pywrap_tensorflow_internal.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="1943" column="53" lean-forward="true" selection-start-line="1943" selection-start-column="53" selection-end-line="1943" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/bert/tokenization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="171" selection-start-line="171" selection-end-line="171" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stopwords-zh-traditional.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="795" column="1" selection-start-line="795" selection-start-column="1" selection-end-line="795" selection-end-column="1" />
-            </state>
+            <state relative-caret-position="-7307" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vocab.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
+            <state relative-caret-position="294661">
               <caret line="17333" column="3" selection-start-line="17333" selection-start-column="2" selection-end-line="17333" selection-end-column="3" />
             </state>
           </provider>
@@ -71,15 +48,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2210">
               <caret line="130" selection-start-line="130" selection-end-line="130" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/http/client.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20298">
-              <caret line="1201" selection-start-line="1201" selection-end-line="1201" />
             </state>
           </provider>
         </entry>
@@ -156,10 +124,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1027" />
-    <option name="y" value="-21" />
+    <option name="x" value="1026" />
+    <option name="y" value="-22" />
     <option name="width" value="960" />
-    <option name="height" value="1026" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -167,28 +135,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="parsepdf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chinese_recipe_finder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="parsepdf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (parsepdf) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chinese_recipe_finder" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chinese_recipe_finder" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="Lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/workspace.xml" />
     <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="RecentsManager">
@@ -272,10 +246,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="697" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49739584" visible="true" weight="0.023828436" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49739584" visible="true" weight="0.14597094" />
       <window_info id="Structure" order="1" sideWeight="0.5026042" side_tool="true" weight="0.17712471" />
       <window_info id="Favorites" order="2" sideWeight="0.5026042" side_tool="true" weight="0.17712471" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -287,7 +261,7 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49960285" weight="0.32685512" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49960285" weight="0.32155478" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.48675495" weight="0.33333334" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.21683876" side_tool="true" visible="true" weight="0.5477032" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.21683876" side_tool="true" visible="true" weight="0.5473833" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32608697" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -341,13 +315,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/urllib/parse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/urllib/parse.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/tika/parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -362,17 +330,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/http/client.py" />
+    <entry file="file://$PROJECT_DIR$/stopwords-zh-traditional.txt" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-339491893/builtins.py" />
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/bert/tokenization.py" />
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/tensorflow/python/pywrap_tensorflow_internal.py" />
+    <entry file="file://$PROJECT_DIR$/parse_pdf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vocab.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294661">
+          <caret line="17333" column="3" selection-start-line="17333" selection-start-column="2" selection-end-line="17333" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2210">
           <caret line="130" selection-start-line="130" selection-end-line="130" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/http/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20298">
-          <caret line="1201" selection-start-line="1201" selection-end-line="1201" />
         </state>
       </provider>
     </entry>
@@ -397,49 +380,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stopwords-zh-traditional.txt">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="795" column="1" selection-start-line="795" selection-start-column="1" selection-end-line="795" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vocab.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="17333" column="3" selection-start-line="17333" selection-start-column="2" selection-end-line="17333" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-339491893/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="258" column="4" selection-start-line="258" selection-start-column="4" selection-end-line="258" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/bert/tokenization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="171" selection-start-line="171" selection-end-line="171" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/tensorflow/python/pywrap_tensorflow_internal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="1943" column="53" lean-forward="true" selection-start-line="1943" selection-start-column="53" selection-end-line="1943" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parse_pdf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-7307" />
       </provider>
     </entry>
   </component>
