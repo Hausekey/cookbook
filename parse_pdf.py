@@ -1,95 +1,94 @@
 import os
 import codecs
 import tika
-tika.initVM()
-from tika import parser
-
-import bert
-from bert import tokenization
-from collections import defaultdict
-import math
-from six import string_types
 import numpy as np
+import bert
+from tika import parser
+from bert import tokenization
+from six import string_types
+tika.initVM()
 
-def word_tf(word, document):
-    if isinstance(document, string_types):
-        document = tokenize(document)
-    return float(document.count(word))/ len(document)
+class TdfIdfAnalyzer:
+    def __init__(self):
+        self._tokenizer = self.create_tokenizer()
+        self.DOCUMENTS_COUNT = len(os.listdir(os.getcwd() + r'\recipes'))
+        self._stop_words = self.get_stop_words()
+        self._vocabulary = self.set_up_vocabulary()
+        self.VOCABULARY_SIZE = len(self._vocabulary)
+        self._word_index = {w: idx for idx, w in enumerate(self._vocabulary)}
+        self._word_idf = self.set_up_word_idf()
 
-def tf_idf(word, document):
-    if isinstance(document, string_types):
-        document = tokenize(document)
+    def set_up_vocabulary(self):
+        vocabulary = set()
+        for filename in os.listdir(os.getcwd() + r'\recipes'):
+            recipe = self.read_recipe_file(filename)
+            tokenizer = self.create_tokenizer()
+            words = self.tokenize(recipe)
+            vocabulary.update(words)
+        vocabulary = list(vocabulary)
+        return vocabulary
 
-    if word not in word_index:
-        return .0
-    tf = word_tf(word, document)
-    idf = word_idf[word_index[word]]
-    return word_tf(word, document) * word_idf[word_index[word]]
-
-def create_tokenizer():
-    return bert.tokenization.FullTokenizer(vocab_file="vocab.txt")
-
-def tokenize(text):
-    words = tokenizer.tokenize(text)
-    return [w for w in words if w not in stop_words and not w.isdigit()]
+    def word_tf(self, word, document):
+        if isinstance(document, string_types):
+            document = self.tokenize(document)
+        return float(document.count(word))/ len(document)
 
 
-def read_recipe_file(filename):
-    parsed = parser.from_file(r"C:\Users\Jackie\PycharmProjects\parsepdf\recipes" + '\\' + filename)
-    recipe = parsed["content"]
-    recipe = recipe.replace(u'\xa0', '').replace(u'\u3000', '')
-    no_special_character = str.maketrans("", "", "【】()")
-    recipe = recipe.translate(no_special_character)
-    recipe = "".join(recipe.split('\n'))
-    return recipe
-# def fit_model(seg_word=True, algorithm="bpe"):
-#     if seg_word:
-#         print("Performing word segmentation...")
-#
-#     #Train Model
-#     print("Training model...")
-#     spm.SentencePieceProcessor.Train(
-#         '--input={} --model_prefix={} --vocab_size={} '
-#         '--input_sentence_size=20000000 '
-#         '--character_coverage=0.995 --model_type={algorithm}'.format(
-#             TMPPATH_WORD if seg_word else TMPPATH,
-#             MODEL_PREFIX.format(algorithm=algorithm),
-#             VOC_SIZE, algorithm="unigram"
-#         )
-#     )
+    def tf_idf(self, word, document):
+        if isinstance(document, string_types):
+            document = self.tokenize(document)
 
-vocabulary = set()
-stop_words = codecs.open("stopwords-zh-traditional.txt", 'r', 'utf=8').read().split('\r\n')
-print(stop_words)
-start_index = -1
-stop_index = -1
-print("jz1: " + os.getcwd())
-algorithm = "unigram"
+        if word not in self._word_index:
+            return .0
+        tf = self.word_tf(word, document)
+        idf = self._word_idf[self._word_index[word]]
+        return tf * idf
+
+
+    def create_tokenizer(self):
+        return bert.tokenization.FullTokenizer(vocab_file="vocab.txt")
+
+
+    def tokenize(self, text):  # can tokenizing be improved?
+        words_from_text = self._tokenizer.tokenize(text)
+        return [w for w in words_from_text if w not in self._stop_words and not w.isdigit()]
+
+
+    def read_recipe_file(self, filename_in):
+        parsed = parser.from_file(r"C:\Users\Jackie\PycharmProjects\parsepdf\recipes" + '\\' + filename_in)
+        recipe_from_file = parsed["content"]
+        recipe_from_file = recipe_from_file.replace(u'\xa0', '').replace(u'\u3000', '')
+        no_special_character = str.maketrans("", "", "【】()")
+        recipe_from_file = recipe_from_file.translate(no_special_character)
+        recipe_from_file = "".join(recipe_from_file.split('\n'))
+        return recipe_from_file
+
+
+    def get_stop_words(self):
+        return codecs.open("stopwords-zh-traditional.txt", 'r', 'utf=8').read().split('\r\n')
+
+    def set_up_word_idf(self):
+        word_idf = np.zeros(self.VOCABULARY_SIZE)
+        for filename in os.listdir(os.getcwd() + r'\recipes'):
+            recipe = self.read_recipe_file(filename)
+            words = set(self.tokenize(recipe))
+            indexes = [self._word_index[word] for word in words]
+            word_idf[indexes] += 1.0
+        word_idf = np.log(self.DOCUMENTS_COUNT / (1 + word_idf).astype(float))
+        return word_idf
+
+analyzer = TdfIdfAnalyzer()
+print(analyzer._word_idf[analyzer._word_index['髮']])
+print(analyzer.word_tf('髮', analyzer.read_recipe_file('冬菇燜髮菜 加桂花陳酒更香.doc')))
+print(analyzer.tf_idf('髮', analyzer.read_recipe_file('冬菇燜髮菜 加桂花陳酒更香.doc')))
+
+article_to_term_relevance_lookup = {}
 for filename in os.listdir(os.getcwd() + r'\recipes'):
-    recipe = read_recipe_file(filename)
-    tokenizer = create_tokenizer()
-    words = tokenize(recipe)
-    vocabulary.update(words)
+    term_relevance = {}
+    recipe = analyzer.read_recipe_file(filename)
+    for term in recipe:
+        print(term)
+        term_relevance[term] = analyzer.tf_idf(term, recipe)
+    article_to_term_relevance_lookup[filename] = term_relevance
 
-vocabulary = list(vocabulary)
-word_index = {w: idx for idx, w in enumerate(vocabulary)}
-
-VOCABULARY_SIZE = len(vocabulary)
-DOCUMENTS_COUNT = len(os.listdir(os.getcwd() + r'\recipes'))
-
-print(VOCABULARY_SIZE)
-print(DOCUMENTS_COUNT)
-
-word_idf = np.zeros(VOCABULARY_SIZE)
-for filename in os.listdir(os.getcwd() + r'\recipes'):
-    recipe = read_recipe_file(filename)
-    tokenizer = create_tokenizer()
-    words = set(tokenize(recipe))
-    indexes = [word_index[word] for word in words]
-    word_idf[indexes] += 1.0
-
-word_idf = np.log(DOCUMENTS_COUNT / (1 + word_idf).astype(float))
-
-print(word_idf[word_index['髮']])
-print(word_tf('髮', read_recipe_file('冬菇燜髮菜 加桂花陳酒更香.doc')))
-print(tf_idf('髮', read_recipe_file('冬菇燜髮菜 加桂花陳酒更香.doc')))
+print(article_to_term_relevance_lookup)
