@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6d61f212-0ee6-49f4-9942-967bb699ff16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse_pdf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipes/Hash Browns.docx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parse_pdf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+            <state relative-caret-position="303">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -30,29 +28,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/tensorflow/python/pywrap_tensorflow_internal.py">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33031">
-              <caret line="1943" column="53" selection-start-line="1943" selection-start-column="53" selection-end-line="1943" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/bert/tokenization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3621">
-              <caret line="221" selection-start-line="221" selection-end-line="221" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stopwords-zh-traditional.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13515">
-              <caret line="795" column="1" selection-start-line="795" selection-start-column="1" selection-end-line="795" selection-end-column="1" />
-            </state>
+            <state relative-caret-position="-14" />
           </provider>
         </entry>
       </file>
@@ -70,15 +48,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2210">
               <caret line="130" selection-start-line="130" selection-end-line="130" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/http/client.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20298">
-              <caret line="1201" selection-start-line="1201" selection-end-line="1201" />
             </state>
           </provider>
         </entry>
@@ -159,13 +128,14 @@
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/tika/tika.py" />
         <option value="$PROJECT_DIR$/stopwords-zh-traditional.txt" />
         <option value="$PROJECT_DIR$/parse_pdf.py" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1158" />
-    <option name="width" value="762" />
-    <option name="height" value="966" />
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -178,22 +148,19 @@
         <subPane>
           <expand>
             <path>
-              <item name="parsepdf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsepdf" type="462c0819:PsiDirectoryNode" />
+              <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chinese_recipe_finder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="parsepdf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="parsepdf" type="462c0819:PsiDirectoryNode" />
-              <item name="recipes" type="462c0819:PsiDirectoryNode" />
+              <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chinese_recipe_finder" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="parsepdf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="parsepdf" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (parsepdf) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chinese_recipe_finder" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="Lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -294,10 +261,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="640" y="0" width="640" height="644" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49739584" visible="true" weight="0.16887417" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49739584" visible="true" weight="0.14597094" />
       <window_info id="Structure" order="1" sideWeight="0.5026042" side_tool="true" weight="0.17712471" />
       <window_info id="Favorites" order="2" sideWeight="0.5026042" side_tool="true" weight="0.17712471" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -307,9 +273,9 @@
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.70293885" weight="0.40812722" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4988086" weight="0.32685512" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4988086" weight="0.32155478" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.4980185" visible="true" weight="0.32107496" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.48610008" weight="0.33215547" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.22350994" side_tool="true" visible="true" weight="0.45614034" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019815" side_tool="true" visible="true" weight="0.32107496" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49960285" weight="0.32508835" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -335,6 +301,32 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- initializing parse project" />
     <option name="LAST_COMMIT_MESSAGE" value="- initializing parse project" />
@@ -358,13 +350,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/urllib/parse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/urllib/parse.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/tika/parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -379,44 +365,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-339491893/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="258" column="4" selection-start-line="258" selection-start-column="4" selection-end-line="258" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parse_pdf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/tensorflow/python/pywrap_tensorflow_internal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33031">
-          <caret line="1943" column="53" selection-start-line="1943" selection-start-column="53" selection-end-line="1943" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/bert/tokenization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3621">
-          <caret line="221" selection-start-line="221" selection-end-line="221" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stopwords-zh-traditional.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13515">
-          <caret line="795" column="1" selection-start-line="795" selection-start-column="1" selection-end-line="795" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-339491893/builtins.py" />
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/tensorflow/python/pywrap_tensorflow_internal.py" />
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/bert/tokenization.py" />
+    <entry file="file://$PROJECT_DIR$/stopwords-zh-traditional.txt" />
     <entry file="file://$PROJECT_DIR$/vocab.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294661">
@@ -431,13 +383,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/http/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20298">
-          <caret line="1201" selection-start-line="1201" selection-end-line="1201" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/http/client.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/urllib3/connectionpool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5270">
@@ -456,6 +402,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10506">
           <caret line="645" selection-start-line="645" selection-end-line="645" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parse_pdf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
