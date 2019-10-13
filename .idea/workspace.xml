@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d61f212-0ee6-49f4-9942-967bb699ff16" name="Default Changelist" comment="">
+    <list default="true" id="6d61f212-0ee6-49f4-9942-967bb699ff16" name="Default Changelist" comment="- initializing parse project">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/parsepdf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/parsepdf.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meetingminutes.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/parse_pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse_pdf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/python.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/python.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/做好水煮牛3重點風味直逼大飯店.pdf" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,63 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parse_pdf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vocab.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294661">
-              <caret line="17333" column="3" selection-start-line="17333" selection-start-column="2" selection-end-line="17333" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/api.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2210">
-              <caret line="130" selection-start-line="130" selection-end-line="130" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/urllib3/connectionpool.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5270">
-              <caret line="353" selection-start-line="353" selection-end-line="353" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/adapters.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7106">
-              <caret line="448" selection-start-line="448" selection-end-line="448" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/sessions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10506">
-              <caret line="645" selection-start-line="645" selection-end-line="645" />
+            <state relative-caret-position="102">
+              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -90,18 +47,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mysql</find>
-      <find>latin</find>
-      <find>open(</find>
-      <find>sys</find>
-      <find>main</find>
-      <find>make_content_disposition_header</find>
-      <find>build_header</find>
-      <find>from_fil</find>
-      <find>_decode_args</find>
-      <find>encode</find>
-      <find>metad</find>
-      <find>word_tok</find>
       <find>tokeni</find>
       <find>/</find>
       <find>版</find>
@@ -116,6 +61,22 @@
       <find>_word</find>
       <find>_tf</find>
       <find>word_ind</find>
+      <find>stop</find>
+      <find>encode(</find>
+      <find>codecs</find>
+      <find>print</find>
+      <find>vector</find>
+      <find>string</find>
+      <find>open</find>
+      <find>gen_</find>
+      <find>gen_v</find>
+      <find>set_up_word_idf</find>
+      <find>_voca</find>
+      <find>VOCABULARY_SIZE</find>
+      <find>jieba</find>
+      <find>腿肉</find>
+      <find>雞</find>
+      <find>tfid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -127,14 +88,16 @@
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/requests/api.py" />
         <option value="$PROJECT_DIR$/venv/Lib/site-packages/tika/tika.py" />
         <option value="$PROJECT_DIR$/stopwords-zh-traditional.txt" />
-        <option value="$PROJECT_DIR$/parse_pdf.py" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/cypher.py" />
+        <option value="$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tika/tika.py" />
+        <option value="$PROJECT_DIR$/parse_pdf.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
+    <option name="x" value="885" />
+    <option name="width" value="1043" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -154,13 +117,26 @@
             <path>
               <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
               <item name="chinese_recipe_finder" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="moreRecipes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
               <item name="chinese_recipe_finder" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="Lib" type="462c0819:PsiDirectoryNode" />
+              <item name="recipes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chinese_recipe_finder" type="462c0819:PsiDirectoryNode" />
+              <item name="segfile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chinese_recipe_finder" type="462c0819:PsiDirectoryNode" />
+              <item name="tfidffile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chinese_recipe_finder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -171,16 +147,17 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jackie\PycharmProjects\parsepdf" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zhang\PycharmProjects\chinese_recipe_finder" />
       <recent name="C:\Users\Jackie\PycharmProjects\parsepdf" />
       <recent name="C:\Users\Jackie\PycharmProjects\parsepdf\recipes" />
       <recent name="C:\Users\Jackie\PycharmProjects\parsepdf\venv" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Jackie\PycharmProjects\parsepdf" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -262,21 +239,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49739584" visible="true" weight="0.14597094" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49739584" visible="true" weight="0.12285337" />
       <window_info id="Structure" order="1" sideWeight="0.5026042" side_tool="true" weight="0.17712471" />
       <window_info id="Favorites" order="2" sideWeight="0.5026042" side_tool="true" weight="0.17712471" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7764901" visible="true" weight="0.45614034" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4993395" weight="0.32956153" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7628798" visible="true" weight="0.46110326" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.70293885" weight="0.40812722" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.8134228" weight="0.4148784" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4988086" weight="0.32685512" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.4980185" visible="true" weight="0.32107496" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.48610008" weight="0.33215547" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019815" side_tool="true" visible="true" weight="0.32107496" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49960285" weight="0.32508835" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49798658" weight="0.32474965" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.672391" weight="0.3281471" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.23712021" side_tool="true" visible="true" weight="0.46110326" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.8120301" weight="0.3204578" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -326,6 +304,20 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- initializing parse project" />
@@ -339,7 +331,29 @@
           <line>106</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/parse_pdf.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/parse_pdf.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/parse_pdf.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -368,11 +382,34 @@
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-339491893/builtins.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/tensorflow/python/pywrap_tensorflow_internal.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/bert/tokenization.py" />
-    <entry file="file://$PROJECT_DIR$/stopwords-zh-traditional.txt" />
-    <entry file="file://$PROJECT_DIR$/vocab.txt">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1174955470/numpy/core/_multiarray_umath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294661">
-          <caret line="17333" column="3" selection-start-line="17333" selection-start-column="2" selection-end-line="17333" selection-end-column="3" />
+        <state relative-caret-position="17">
+          <caret line="5024" column="4" lean-forward="true" selection-start-line="5024" selection-start-column="4" selection-end-line="5024" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/encodings/cp1252.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/http/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20247">
+          <caret line="1198" column="28" selection-start-line="1198" selection-start-column="22" selection-end-line="1198" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/tika/tika.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5457">
+          <caret line="321" column="21" selection-start-line="321" selection-start-column="21" selection-end-line="321" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -383,7 +420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/http/client.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/urllib3/connectionpool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5270">
@@ -405,18 +441,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/scipy/sparse/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14" />
+        <state relative-caret-position="283">
+          <caret line="687" selection-start-line="687" selection-end-line="687" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/sklearn/feature_extraction/text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="1039" column="12" lean-forward="true" selection-start-line="1039" selection-start-column="12" selection-end-line="1039" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tfidffile/.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/scipy/sparse/_index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="135" column="32" selection-start-line="135" selection-start-column="32" selection-end-line="135" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/segfile/下班後上菜 免久等.doc-seg.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cypher.py" />
+    <entry file="file://$PROJECT_DIR$/stopwords-zh-traditional.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tfidffile/4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14779">
+          <caret line="945" column="7" lean-forward="true" selection-start-line="945" selection-start-column="7" selection-end-line="945" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/segfile/一隻雞腿 法式美味.doc-seg.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="267" selection-start-column="266" selection-end-column="267" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/segfile/IG超紅氣泡飲 在家調也Hen食尚.doc-seg.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tfidffile/2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8908">
+          <caret line="804" column="7" selection-start-line="804" selection-start-column="7" selection-end-line="804" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tfidffile/1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13648">
+          <caret line="1094" column="7" selection-start-line="1094" selection-start-column="6" selection-end-line="1094" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tfidffile/0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="75" column="7" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="7" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parse_pdf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vocab.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358972">
+          <caret line="21116" column="3" selection-start-line="21116" selection-start-column="3" selection-end-line="21116" selection-end-column="3" />
         </state>
       </provider>
     </entry>
