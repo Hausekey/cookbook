@@ -7,35 +7,37 @@ from collections import Counter
 import jieba
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
-
+import ntpath
+ntpath.basename("a/b/c")
 tika.initVM()
 
 
 class TdfIdfAnalyzer:
     def __init__(self):
         self._weight = []
-        self.DOCUMENTS_COUNT = len(os.listdir(os.getcwd() + r'\recipes'))
-        self._stop_words = self.get_stop_words()
         self._vocabulary = []
         self._word_idf = []
+        self._file_lookup = []
+        self._corpus = [] # don't remember what _corpus is for
 
+    @staticmethod
+    def path_leaf(path):
+        head, tail = ntpath.split(path)
+        return tail or ntpath.basename(head)
+
+    def setupcorpus(self, filelist):
+        for fname in filelist:
+            print("***" + fname)
+            self.segment_file(fname)
+            ff = self.path_leaf(fname)
+            self._file_lookup.append(ff)
+
+    # utilizes sklearn vectorizer to find tf-idf for all
     def Tfidf(self):
-        path = './segfile/'
-        filelist = os.listdir(path)
-        corpus = []
-        for ff in filelist:
-            print("***" + ff)
-            fname = path + ff
-            f = open(fname, 'r+', encoding='utf-8')
-            content = f.read()
-            f.close()
-            corpus.append(content)
-        print("$$$$$$" + corpus[0])
+        # always take from segfile
         vectorizer = CountVectorizer(token_pattern=r'(?u)\b\w+\b', stop_words=None)
-        vectorizer_fit = vectorizer.fit(corpus)
-
         transformer = TfidfTransformer(use_idf=True)
-        vectorizer_transform = vectorizer.fit_transform(corpus)
+        vectorizer_transform = vectorizer.fit_transform(self._corpus)
         tfidf = transformer.fit_transform(vectorizer_transform)
 
         word = vectorizer.get_feature_names()
@@ -55,8 +57,8 @@ class TdfIdfAnalyzer:
             f.close()
 
         # testing out a query
-        Q = self.find_relevant_documents(10, "紅棗30克蜜蓮子7顆")
-        print(Q)
+        # Q = self.find_relevant_documents(10, "紅棗30克蜜蓮子7顆")
+        # print(Q)
 
     def gen_vector(self, tokens, word):
         Q = np.zeros((len(self._vocabulary)))
@@ -91,8 +93,9 @@ class TdfIdfAnalyzer:
         for d in self._weight:
             d_cosines.append(self.cosine_sim(query_vector, d))
         out = np.array(d_cosines).argsort()[-k:][::-1]
+        docs = [self._file_lookup[i] for i in out]
         print(out)
-        return out
+        return docs
 
     def preprocess(self, data):
         data = self.remove_stop_words(data)
@@ -117,16 +120,20 @@ class TdfIdfAnalyzer:
             seg = ''.join(seg.split())
             if seg != '' and seg != "\n" and seg != "\n\n":
                 result.append(seg)
-        f = open(result_folder + '/' + filename_in + '-seg.txt', "w+", encoding='utf-8')
-        f.write(' '.join(result))
+
+        ff = self.path_leaf(filename_in)
+
+        f = open(result_folder + '/' + ff + '-seg.txt', "w+", encoding='utf-8')
+        segmented_content = ' '.join(result)
+        self._corpus.append(segmented_content)
+        f.write(segmented_content)
         f.close()
 
     @staticmethod
-    def read_recipe_file(filename_in):
+    def read_recipe_file(abs_path):
         # TODO: abstract out folder locations
-        abs_path = r"C:\Users\zhang\PycharmProjects\chinese_recipe_finder\recipes"
         # replace this to be consistent
-        parsed = parser.from_file(abs_path + '\\' + filename_in)
+        parsed = parser.from_file(abs_path)
         recipe_from_file = parsed["content"]
         recipe_from_file = recipe_from_file.replace(u'\xa0', '').replace(u'\u3000', '')
         no_special_character = str.maketrans("", "", "【】()")
@@ -138,11 +145,11 @@ class TdfIdfAnalyzer:
         return codecs.open("stopwords-zh-traditional.txt", 'r', 'utf=8').read().split('\r\n')
 
 
-analyzer = TdfIdfAnalyzer()
-
-article_to_term_relevance_lookup = {}
-for filename in os.listdir(os.getcwd() + r'\recipes'):
-    print("using jieba on " + filename)
-    analyzer.segment_file(filename)
-analyzer.Tfidf()
+# analyzer = TdfIdfAnalyzer()
+#
+# article_to_term_relevance_lookup = {}
+# for filename in os.listdir(os.getcwd() + r'\recipes'):
+#     print("using jieba on " + filename)
+#     analyzer.segment_file(filename)
+# analyzer.Tfidf()
 
