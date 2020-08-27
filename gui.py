@@ -1,8 +1,12 @@
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QLabel, QLineEdit, QWidget, QVBoxLayout, QTabWidget, QPushButton, QFileDialog
-from PyQt5.QtCore import pyqtSlot
+from PyQt5 import QtWidgets, QtCore, QtGui, uic
+from PyQt5.Qt import QSize
+from PyQt5.QtCore import pyqtSlot, QAbstractItemModel, Qt
 import sys
+import os
 from parse_pdf import TdfIdfAnalyzer
+from os import listdir
+from os.path import isfile, join
+from shutil import copyfile
 
 # todo: have tf idf data be saved for quick access when app closes & re-open
 # todo: freeze the solution so that it can be a stand-alone app
@@ -10,86 +14,88 @@ from parse_pdf import TdfIdfAnalyzer
 # todo: url-ize the results so that document will open upon click
 # todo: list out available documents
 
-class RecipeFinder(QtWidgets.QMainWindow):
+qt_creator_file = "mainwindow.ui"
+Ui_MainWindow, QtBaseClass = uic.loadUiType(qt_creator_file)
+
+contentspath = os.getcwd() + "/files"
+
+
+class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
-        super(RecipeFinder, self).__init__()
-        self.setGeometry(200, 200, 500, 500)
+        super(MainWindow, self).__init__()
+        Ui_MainWindow.__init__(self)
+        self.setupUi(self)
         self.setWindowTitle("Leejung's Chinese Cookbook")
-        self.table_widget = MyTableWidget(self)
-        self.setCentralWidget(self.table_widget)
-        self.show()
 
-    def clicked(self):
-        self.label.setText("you pressed the button")
+        self.contentsModel = ContentsModel()
+        self.setFixedSize(1089, 611)
+        self.load()
+        self.contentsView.setModel(self.contentsModel)
+        self.addButton.pressed.connect(self.add)
+        self.removeButton.pressed.connect(self.delete)
 
-class MyTableWidget(QWidget):
-    def __init__(self, parent):
-        super(QWidget, self).__init__(parent)
-        self.layout = QVBoxLayout(self)
-        self._analyzer = TdfIdfAnalyzer()
-        # Initialize tab screen
-        self.tabs = QTabWidget()
-        self.upload_tab = QWidget()
-        self.search_tab = QWidget()
-        self.tabs.resize(300, 200)
+    def load(self):
+        if os.path.exists(contentspath):
+            self.contentsModel.contents = [f for f in listdir(contentspath) if isfile(join(contentspath, f))]
+        else:
+            os.mkdir(contentspath)
 
-        # Add tabs
-        self.tabs.addTab(self.upload_tab, "Upload")
-        self.tabs.addTab(self.search_tab, "Search")
-
-        # Create first tab
-        self.upload_tab.layout = QVBoxLayout(self)
-        self.search_tab.layout = QVBoxLayout(self)
-        self.pushButton1 = QPushButton("Browse")
-        self.pushButton1.clicked.connect(self.getfile)
-        self.upload_tab.layout.addWidget(self.pushButton1)
-        self.upload_tab.setLayout(self.upload_tab.layout)
-
-        self.searchbar = QLineEdit(self)
-        self.searchbutton = QPushButton("Search", self)
-        self.searchbutton.clicked.connect(self.on_search_click)
-        self.searchbutton.move(20, 80)
-        self.resultbox = QLabel()
-        self.resultbox.setText("testing")
-        self.resultbox.setWordWrap(True)
-        self.search_tab.layout.addWidget(self.searchbar)
-        self.search_tab.layout.addWidget(self.searchbutton)
-        self.search_tab.layout.addWidget(self.resultbox)
-        self.search_tab.setLayout(self.search_tab.layout)
-        # Add tabs to widget
-        self.layout.addWidget(self.tabs)
-        self.setLayout(self.layout)
-
-    def getfile(self):
-        options = QFileDialog.Options()
-        options |= QFileDialog.DontUseNativeDialog
-        files, _ = QFileDialog.getOpenFileNames(self, "QFileDialog.getOpenFileNames()", "", "All Files (*);;.pdf (*.pdf);;.", options=options)
+    def add(self):
+        options = QtWidgets.QFileDialog.Options()
+        options |= QtWidgets.QFileDialog.DontUseNativeDialog
+        files, _ = QtWidgets.QFileDialog.getOpenFileNames(self, "QFileDialog.getOpenFileNames()", "",
+                                                "All Files (*);;.pdf (*.pdf);;.", options=options)
         if files:
             print(files)
-            self._analyzer.setupcorpus(files)
-        self._analyzer.Tfidf()
+            #self._analyzer.setupcorpus(files)
+            for f in files:
+                copyfile(f, contentspath + '/' + os.path.basename(f))
+        self.contentsModel.contents = [f for f in listdir(contentspath) if isfile(join(contentspath, f))]
+        self.contentsModel.layoutChanged.emit()
+        #self._analyzer.Tfidf()
 
-    @pyqtSlot()
-    def on_search_click(self):
-        textboxValue = self.searchbar.text()
-        nosearch = 10
-        docs = self._analyzer.find_relevant_documents(nosearch, textboxValue)
-        self.resultbox.setText(', '.join(docs))
+    def delete(self):
+        indexes = self.contentsView.selectedIndexes()
+        if indexes:
+            index = indexes[0]
+            row = index.row()
+            print(self.contentsModel.contents[row])
+            os.remove(contentspath + self.contentsModel.contents[row])
+            del self.contentsModel.contents[index.row()]
+            self.model.layoutChanged.emit()
+            self.contentsModel.clearSelection()
 
 
-    # @pyqtSlot()
-    # def on_click(self):
-    #     print("\n")
-    #     for currentQTableWidgetItem in self.tableWidget.selectedItems():
-    #         print(currentQTableWidgetItem.row(), currentQTableWidgetItem.column(), currentQTableWidgetItem.text())
+
+# Table of Contents
+class ContentsModel(QtCore.QAbstractListModel):
+    def __init__(self, *args, contents=None, **kwargs):
+        super(ContentsModel, self).__init__(*args, **kwargs)
+        self.contents = contents or []
+
+    def data(self, index, role):
+        if role == Qt.DisplayRole:
+            title = self.contents[index.row()]
+            return title
+
+    def rowCount(self, index):
+        return len(self.contents)
+
+class ResultButtonModel(QtCore.QAbstractTableModel):
+    def __init__(self, result):
+        super(ResultTableModel, self).__init__()
+        self._results = result
+
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     app.setStyleSheet(""
                       "QLabel { font-size:20px; }"
                       "QPushButton { font-size:20px;}"
                       "QWidget {font-size:20px; }"
                       "")
-    ex = RecipeFinder()
+
+    window = MainWindow()
+    window.show()
     sys.exit(app.exec_())
 
