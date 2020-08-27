@@ -4,3 +4,7 @@
 /__pycache__
 /tfidffile
 .idea
+.idea/*
+/recipes
+/recipes/*
+recipes_sample_data/
