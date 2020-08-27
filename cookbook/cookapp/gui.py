@@ -7,7 +7,7 @@ from parse_pdf import TdfIdfAnalyzer
 from os import listdir
 from os.path import isfile, join
 from shutil import copyfile
-from 
+from
 
 # todo: have tf idf data be saved for quick access when app closes & re-open
 # todo: freeze the solution so that it can be a stand-alone app
@@ -48,12 +48,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                                                 "All Files (*);;.pdf (*.pdf);;.", options=options)
         if files:
             print(files)
-            #self._analyzer.setupcorpus(files)
             for f in files:
                 copyfile(f, contentspath + '/' + os.path.basename(f))
         self.contentsModel.contents = [f for f in listdir(contentspath) if isfile(join(contentspath, f))]
         self.contentsModel.layoutChanged.emit()
-        #self._analyzer.Tfidf()
 
     def delete(self):
         indexes = self.contentsView.selectedIndexes()

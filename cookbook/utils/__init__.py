@@ -4,7 +4,8 @@ import six
 
 WINDOWS_MAGIC_PREFIX = u'\\\\?\\'
 
-
+# Taken from beets github. Thank you for this blog post beets team!
+# https://beets.io/blog/paths.html
 def bytestring_path(path):
     """Given a path, which is either a bytes or a unicode, returns a str
     path (ensuring that we never deal with Unicode pathnames).
@@ -25,7 +26,8 @@ def bytestring_path(path):
     except (UnicodeError, LookupError):
         return path.encode('utf-8')
 
-
+# Taken from beets github. Thank you for this blog post beets team!
+# https://beets.io/blog/paths.html
 def syspath(path, prefix=True):
     """Convert a path for use by the operating system. In particular,
     paths on Windows must receive a magic prefix and must be converted
