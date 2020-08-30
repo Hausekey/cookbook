@@ -3,12 +3,12 @@ from PyQt5.Qt import QSize
 from PyQt5.QtCore import pyqtSlot, QAbstractItemModel, Qt
 import sys
 import os
-from parse_pdf import TdfIdfAnalyzer
 from os import listdir
 from os.path import isfile, join
 from shutil import copyfile
 import utils
 import textract
+from parse_pdf import TfIdfAnalyzer
 
 # todo: have tf idf data be saved for quick access when app closes & re-open
 # todo: freeze the solution so that it can be a stand-alone app
@@ -45,6 +45,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.removeButton.pressed.connect(self.delete)
         self.viewButton.pressed.connect(self.openDoc)
         self.dialog = RecipePage()
+        self.searchengine = TfIdfAnalyzer()
 
     def load(self):
         if os.path.exists(utils.syspath(contentspath)):
@@ -63,9 +64,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 copyfile(utils.bytestring_path(f), utils.bytestring_path(contentspath + os.path.basename(f)))
                 contentButton = QtWidgets.QPushButton("button")
                 contentButton.pressed.connect(self.openDoc)
-                print(files.index(f))
-                self.contentsView.setIndexWidget(files.index(f), contentButton)
             #self.contentsModel.contents = [utils.bytestring_path(f) for f in listdir(contentspath) if isfile(join(contentspath, f))]
+            self.searchengine.setupcorpus(files)
+        self.searchengine.Tfidf()
         self.contentsModel.layoutChanged.emit()
 
     def delete(self):
@@ -74,10 +75,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             index = indexes[0]
             row = index.row()
             print(self.contentsModel.contents[row])
-            os.remove(utils.syspath(contentspath + self.contentsModel.contents[row]))
-            del self.contentsModel.contents[index.row()]
-            self.contentsModel.layoutChanged.emit()
-            self.contentsView.clearSelection()
+            try:
+                os.remove(utils.syspath(utils.bytestring_path(contentspath) + self.contentsModel.contents[row]))
+                del self.contentsModel.contents[index.row()]
+                self.contentsModel.layoutChanged.emit()
+            except PermissionError:
+                print("Permission denied")
 
     def openDoc(self):
         indexes = self.contentsView.selectedIndexes()

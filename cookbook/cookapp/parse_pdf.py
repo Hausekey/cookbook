@@ -12,7 +12,7 @@ ntpath.basename("a/b/c")
 tika.initVM()
 
 
-class TdfIdfAnalyzer:
+class TfIdfAnalyzer:
     def __init__(self):
         self._weight = []
         self._vocabulary = []
