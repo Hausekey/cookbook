@@ -7,7 +7,8 @@ from parse_pdf import TdfIdfAnalyzer
 from os import listdir
 from os.path import isfile, join
 from shutil import copyfile
-from
+import utils
+import textract
 
 # todo: have tf idf data be saved for quick access when app closes & re-open
 # todo: freeze the solution so that it can be a stand-alone app
@@ -15,16 +16,24 @@ from
 # todo: url-ize the results so that document will open upon click
 # todo: list out available documents
 
-qt_creator_file = "mainwindow.ui"
+qt_creator_file = "../ui/mainwindow.ui"
+qt_recipeview = "../ui/recipepage.ui"
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qt_creator_file)
+Ui_RecipeView, QtRecipeViewClass = uic.loadUiType(qt_recipeview)
+contentspath = os.getcwd() + "/files/"
 
-contentspath = os.getcwd() + "/files"
-
+class RecipePage(QtWidgets.QMainWindow, Ui_RecipeView):
+    def __init__(self, parent=None, content=""):
+        super(RecipePage, self).__init__(parent)
+        Ui_RecipeView.__init__(self)
+        self.setupUi(self)
+        self.textEdit.setText(utils.displayable_path(content))
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         Ui_MainWindow.__init__(self)
+        self.setWindowIcon(QtGui.QIcon('../ui/images/logo.png'))
         self.setupUi(self)
         self.setWindowTitle("Leejung's Chinese Cookbook")
 
@@ -34,10 +43,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.contentsView.setModel(self.contentsModel)
         self.addButton.pressed.connect(self.add)
         self.removeButton.pressed.connect(self.delete)
+        self.viewButton.pressed.connect(self.openDoc)
+        self.dialog = RecipePage()
 
     def load(self):
-        if os.path.exists(contentspath):
-            self.contentsModel.contents = [f for f in listdir(contentspath) if isfile(join(contentspath, f))]
+        if os.path.exists(utils.syspath(contentspath)):
+            self.contentsModel.contents = [utils.bytestring_path(f) for f in listdir(contentspath) if isfile(join(contentspath, f))]
         else:
             os.mkdir(contentspath)
 
@@ -49,8 +60,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         if files:
             print(files)
             for f in files:
-                copyfile(f, contentspath + '/' + os.path.basename(f))
-        self.contentsModel.contents = [f for f in listdir(contentspath) if isfile(join(contentspath, f))]
+                copyfile(utils.bytestring_path(f), utils.bytestring_path(contentspath + os.path.basename(f)))
+                contentButton = QtWidgets.QPushButton("button")
+                contentButton.pressed.connect(self.openDoc)
+                print(files.index(f))
+                self.contentsView.setIndexWidget(files.index(f), contentButton)
+            #self.contentsModel.contents = [utils.bytestring_path(f) for f in listdir(contentspath) if isfile(join(contentspath, f))]
         self.contentsModel.layoutChanged.emit()
 
     def delete(self):
@@ -59,11 +74,20 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             index = indexes[0]
             row = index.row()
             print(self.contentsModel.contents[row])
-            os.remove(contentspath + self.contentsModel.contents[row])
+            os.remove(utils.syspath(contentspath + self.contentsModel.contents[row]))
             del self.contentsModel.contents[index.row()]
-            self.model.layoutChanged.emit()
-            self.contentsModel.clearSelection()
+            self.contentsModel.layoutChanged.emit()
+            self.contentsView.clearSelection()
 
+    def openDoc(self):
+        indexes = self.contentsView.selectedIndexes()
+        if indexes:
+            index = indexes[0]
+            row = index.row()
+            text = textract.process(utils.displayable_path(utils.bytestring_path(contentspath) + utils.bytestring_path(self.contentsModel.contents[row])))
+            self.dialog = RecipePage(self, text)
+            print(text)
+            self.dialog.show()
 
 
 # Table of Contents
@@ -75,10 +99,11 @@ class ContentsModel(QtCore.QAbstractListModel):
     def data(self, index, role):
         if role == Qt.DisplayRole:
             title = self.contents[index.row()]
-            return title
+            return utils.displayable_path(title)
 
     def rowCount(self, index):
         return len(self.contents)
+
 
 class ResultButtonModel(QtCore.QAbstractTableModel):
     def __init__(self, result):
