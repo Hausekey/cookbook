@@ -39,17 +39,22 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.contentsModel = ContentsModel()
         self.setFixedSize(1089, 611)
-        self.load()
         self.contentsView.setModel(self.contentsModel)
         self.addButton.pressed.connect(self.add)
         self.removeButton.pressed.connect(self.delete)
         self.viewButton.pressed.connect(self.openDoc)
+        self.scrollAreaWidgetContents.setLayout(self.gridLayout)
         self.dialog = RecipePage()
+        self.searchButton.pressed.connect(self.searchWord)
         self.searchengine = TfIdfAnalyzer()
+        self.load()
 
     def load(self):
         if os.path.exists(utils.syspath(contentspath)):
             self.contentsModel.contents = [utils.bytestring_path(f) for f in listdir(contentspath) if isfile(join(contentspath, f))]
+            print(self.contentsModel.contents)
+            self.searchengine.setupcorpus("files/" + f for f in listdir(contentspath))
+            self.searchengine.Tfidf()
         else:
             os.mkdir(contentspath)
 
@@ -64,7 +69,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 copyfile(utils.bytestring_path(f), utils.bytestring_path(contentspath + os.path.basename(f)))
                 contentButton = QtWidgets.QPushButton("button")
                 contentButton.pressed.connect(self.openDoc)
-            #self.contentsModel.contents = [utils.bytestring_path(f) for f in listdir(contentspath) if isfile(join(contentspath, f))]
+            self.contentsModel.contents = [utils.bytestring_path(f) for f in listdir(contentspath) if isfile(join(contentspath, f))]
             self.searchengine.setupcorpus(files)
         self.searchengine.Tfidf()
         self.contentsModel.layoutChanged.emit()
@@ -92,6 +97,32 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             print(text)
             self.dialog.show()
 
+    def openRecipeDialog(self, filename):
+        print("hai")
+        text = textract.process(utils.displayable_path(utils.bytestring_path(contentspath) + utils.bytestring_path(filename)))
+        self.dialog = RecipePage(self, text)
+        print(text)
+        self.dialog.show()
+
+    def searchWord(self):
+        for i in reversed(range(self.gridLayout.count())):
+            self.gridLayout.itemAt(i).widget().setParent(None)
+        keywords = self.keywordsEntry.text()
+        numofsearch = 10
+        docs = self.searchengine.find_relevant_documents(numofsearch, keywords)
+        print("hi " + str(len(docs)))
+        for doc in docs:
+            print(doc)
+            newbutton = QtWidgets.QPushButton()
+            newlabel = QtWidgets.QLabel(newbutton)
+            newlabel.setFixedSize(155, 155)
+            newbutton.setFixedSize(155, 155)
+            newbutton.pressed.connect(lambda x = doc: self.openRecipeDialog(x))
+            newlabel.setWordWrap(True)
+            newlabel.setText(doc)
+            newlabel.setTextInteractionFlags(Qt.NoTextInteraction)
+            newlabel.setAlignment(Qt.AlignCenter)
+            self.gridLayout.addWidget(newbutton, docs.index(doc) / 3, docs.index(doc) % 3)
 
 # Table of Contents
 class ContentsModel(QtCore.QAbstractListModel):
